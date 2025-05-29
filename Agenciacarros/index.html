@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Agência de Carros | Inventário Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sua Agência de Carros <small>| Inventário Online</small></h1>
+        <p>Encontre seu próximo veículo ou gerencie seu estoque!</p>
+    </header>
+
+    <main class="container">
+        <section class="search-car-section">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar carros...">
+            </div>
+        </section>
+
+        <section class="add-car-section" style="display: none;">
+            <input type="text" id="carNameInput" placeholder="Ex: Fiat Palio 2015">
+            <input type="text" id="carPriceInput" placeholder="Preço: Ex: MT 350.000">
+            <input type="text" id="carImageInput" placeholder="URL da Imagem (opcional)">
+            <button id="addCarBtn">Adicionar Carro ao Inventário</button>
+        </section>
+
+        <section class="car-list-section">
+            <h2>Veículos em Estoque / Disponíveis</h2>
+            <ul id="carList" class="car-list">
+                <li class="car-item" data-car-name="Ford XTH 080">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/1.jpg" alt="Imagem Ford XTH 080">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Ford XTH 080</h3>
+                        <p class="car-price">MT 550.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Ford ENIG EKF">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/2.jpg" alt="Imagem Ford ENIG EKF">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Ford ENIG EKF</h3>
+                        <p class="car-price">MT 800.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Ford">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/3.png" alt="Imagem Ford">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Ford</h3>
+                        <p class="car-price">MT 700.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Ford Bronco UUV 801">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/4.jpg" alt="Imagem Ford Bronco UUV 801">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Ford Bronco UUV 801</h3>
+                        <p class="car-price">MT 600.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Ford Ranger Raptor">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/5.png" alt="Imagem Ford Ranger Raptor">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Ford Ranger Raptor</h3>
+                        <p class="car-price">MT 950.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Toyota Revo">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/6.jpg" alt="Imagem Toyota Revo">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Toyota Revo</h3>
+                        <p class="car-price">MT 1.300.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Toyota Vity">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/7.jpg" alt="Imagem Toyota Vity">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Toyota Vity</h3>
+                        <p class="car-price">MT 1.200.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Toyota GDJ76">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/8.png" alt="Imagem Toyota GDJ76">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Toyota GDJ76</h3>
+                        <p class="car-price">MT 1.050.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Toyota Runx">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/9.png" alt="Imagem Toyota Runx">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Toyota Runx</h3>
+                        <p class="car-price">MT 900.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Toyota Alex">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/10.png" alt="Imagem Toyota Alex">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Toyota Alex</h3>
+                        <p class="car-price">MT 850.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="BMW M5">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/11.png" alt="Imagem BMW M5">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">BMW M5</h3>
+                        <p class="car-price">MT 1.800.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="BMW 6562">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/12.jpg" alt="Imagem BMW 6562">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">BMW 6562</h3>
+                        <p class="car-price">MT 1.600.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="BMW X6">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/13.png" alt="Imagem BMW X6">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">BMW X6</h3>
+                        <p class="car-price">MT 1.400.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="BMW M3">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/14.png" alt="Imagem BMW M3">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">BMW M3</h3>
+                        <p class="car-price">MT 2.200.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="BMW X1">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/15.png" alt="Imagem BMW X1">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">BMW X1</h3>
+                        <p class="car-price">MT 2.000.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="ISUZU D-MAX">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/16.jpg" alt="Imagem ISUZU D-MAX">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">ISUZU D-MAX</h3>
+                        <p class="car-price">MT 2.500.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="Caminhoneta">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/17.jpg" alt="Imagem Caminhoneta">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">Caminhoneta</h3>
+                        <p class="car-price">MT 1.700.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="ISUZU INDIA">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/18.jpg" alt="Imagem ISUZU INDIA">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">ISUZU INDIA</h3>
+                        <p class="car-price">MT 2.000.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="ISUZU D-MAX PICKUP">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/19.png" alt="Imagem ISUZU D-MAX PICKUP">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">ISUZU D-MAX PICKUP</h3>
+                        <p class="car-price">MT 1.900.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="car-item" data-car-name="ISUZU KB">
+                    <div class="car-image-wrapper">
+                        <img class="car-image" src="img/20.png" alt="Imagem ISUZU KB">
+                    </div>
+                    <div class="car-content">
+                        <h3 class="car-name">ISUZU KB</h3>
+                        <p class="car-price">MT 1.750.000</p>
+                        <div class="car-actions">
+                            <button class="status-btn">Marcar como Vendido</button>
+                            <button class="remove-btn">Remover</button>
+                        </div>
+                        <div class="comments-section">
+                            <h4>Comentários:</h4>
+                            <ul class="comments-list"></ul>
+                            <div class="comment-input-wrapper">
+                                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                                <button class="add-comment-btn">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sua Agência de Carros. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
